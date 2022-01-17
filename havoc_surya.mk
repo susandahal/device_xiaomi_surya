@@ -26,7 +26,7 @@ $(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 PRODUCT_NAME := havoc_surya
 PRODUCT_DEVICE := surya
-PRODUCT_BRAND := POCO
+PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO X3
 PRODUCT_MANUFACTURER := Xiaomi
 
