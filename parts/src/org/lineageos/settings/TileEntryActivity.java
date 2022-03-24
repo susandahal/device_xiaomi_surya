@@ -25,14 +25,24 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import org.lineageos.settings.display.LcdFeaturesPreferenceActivity;
+
 public class TileEntryActivity extends Activity {
     private static final String TAG = "TileEntryActivity";
+    private static final String CABC_TILE = "org.lineageos.settings.display.CabcTileService";
+    private static final String HBM_TILE = "org.lineageos.settings.display.HbmTileService";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ComponentName sourceClass = getIntent().getParcelableExtra(Intent.EXTRA_COMPONENT_NAME);
         switch (sourceClass.getClassName()) {
+            case CABC_TILE:
+                openActivitySafely(new Intent(this, LcdFeaturesPreferenceActivity.class));
+                break;
+            case HBM_TILE:
+                openActivitySafely(new Intent(this, LcdFeaturesPreferenceActivity.class));
+                break;
             default:
                 finish();
                 break;
