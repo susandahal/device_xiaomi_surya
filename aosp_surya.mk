@@ -48,6 +48,12 @@ TARGET_BOOT_ANIMATION_RES := 1080
 # prebuilt graphene
 TARGET_BUILD_GRAPHENEOS_CAMERA := true
 
+# Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# pixel build flag
+WITH_GAPPS := true
+
 PRODUCT_NAME := aosp_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
