@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pixys_surya.mk
+    $(LOCAL_DIR)/cipher_surya.mk
 
 COMMON_LUNCH_CHOICES := \
-    pixys_surya-user \
-    pixys_surya-userdebug \
-    pixys_surya-eng
+    cipher_surya-user \
+    cipher_surya-userdebug \
+    cipher_surya-eng
