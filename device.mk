@@ -502,6 +502,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
     libnl \
     libqdMetaData \
+    libqdMetaData.vendor \
     libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
