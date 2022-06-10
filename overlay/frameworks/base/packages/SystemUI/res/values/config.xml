@@ -26,4 +26,8 @@
 
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
+
+    <!-- The CPU temperature sensor path, CPU0 -->
+    <string name="config_cpuTempSensor" translatable="false">/sys/class/thermal/thermal_zone45/temp</string>
+
 </resources>
