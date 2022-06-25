@@ -25,12 +25,12 @@ $(call inherit-product, device/xiaomi/surya/device.mk)
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/pixys/config/common_full_phone.mk)
+$(call inherit-product, vendor/stag/config/common.mk)
 
 #Gapps
-TARGET_GAPPS_ARCH := arm64
+#TARGET_GAPPS_ARCH := arm64
 
-PRODUCT_NAME := pixys_surya
+PRODUCT_NAME := stag_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3 NFC
