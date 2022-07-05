@@ -16,6 +16,7 @@
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true # Builds deprecated elf files in vendor
 BUILD_BROKEN_DUP_RULES := true  # Allow duplicate rules to override them
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 BOARD_VENDOR := xiaomi
 
