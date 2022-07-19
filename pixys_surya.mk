@@ -21,15 +21,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from surya device
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common PixysOS stuff.
+$(call inherit-product, vendor/pixys/config/common_full_phone.mk)
 
-PRODUCT_NAME := havoc_surya
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+#Gapps
+TARGET_GAPPS_ARCH := arm64
+
+PRODUCT_NAME := pixys_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := POCO X3
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-HAVOC_BUILD_TYPE := Official
