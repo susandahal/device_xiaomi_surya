@@ -50,6 +50,10 @@ ODM_MANIFEST_SURYA_FILES := $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_surya
 TARGET_RECOVERY_DEVICE_MODULES := libinit_surya
 
+# Inherit from ReloadedOS configuration
+include vendor/reloaded/config/BoardConfigReloaded.mk
+
+
 # Kernel
 KERNEL_DEFCONFIG := vendor/surya-perf_defconfig
 BOARD_KERNEL_BASE := 0x00000000
@@ -122,6 +126,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
+# Reloaded Properties
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
 
 # Screen density
 TARGET_SCREEN_DENSITY := 440
