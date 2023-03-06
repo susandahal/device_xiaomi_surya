@@ -12,9 +12,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
 # Inherit some common ReloadedOS stuff.
-$(call inherit-product, vendor/reloaded/config/product.mk)
+$(call inherit-product, vendor/404/configs/common.mk)
 
-PRODUCT_NAME := surya
+PRODUCT_NAME := p404_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := M2007J20CG
