@@ -17,7 +17,7 @@ android_app {
     ],
 
     static_libs: [
-        "com.pixys.settings.resources",
+        "co.aospa.resources",
     ],
 
     optimize: {
