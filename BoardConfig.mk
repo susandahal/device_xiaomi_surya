@@ -50,19 +50,17 @@ ODM_MANIFEST_SURYA_FILES := $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_surya
 TARGET_RECOVERY_DEVICE_MODULES := libinit_surya
 
-# Inherit from ReloadedOS configuration
-include vendor/reloaded/config/BoardConfigReloaded.mk
-
-
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/surya-perf_defconfig
+TARGET_KERNEL_CONFIG := surya_defconfig
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
+TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version 2
+TARGET_COMPILE_WITH_MSM_KERNEL := true
 
 BOARD_KERNEL_CMDLINE += \
     kpti=off \
