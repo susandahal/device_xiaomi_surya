@@ -5,7 +5,7 @@ DEVICE_PATH := device/xiaomi/surya
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
+SELINUX_IGNORE_NEVERALLOWS := true
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a-dotprod
@@ -36,12 +36,20 @@ TARGET_PROVIDES_AUDIO_EXTNS := true
 TARGET_BOOTLOADER_BOARD_NAME := sm6150
 TARGET_NO_BOOTLOADER := true
 
+MSMSTEPPE := sm6150
+TARGET_BOARD_PLATFORM := $(MSMSTEPPE)
+
 # DT2W
 TARGET_TAP_TO_WAKE_NODE  := "/proc/tp_gesture"
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/device_framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+	$(DEVICE_PATH)/configs/hidl/device_framework_compatibility_matrix.xml \
+	vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
+
+DEVICE_MATRIX_FILE := device/qcom/common/compatibility_matrix.xml
 
 ODM_MANIFEST_SKUS += surya
 ODM_MANIFEST_SURYA_FILES := $(DEVICE_PATH)/configs/hidl/manifest-nfc.xml
@@ -51,7 +59,7 @@ TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_surya
 TARGET_RECOVERY_DEVICE_MODULES := libinit_surya
 
 # Kernel
-TARGET_KERNEL_CONFIG := surya_defconfig
+KERNEL_DEFCONFIG := vendor/surya-perf_defconfig
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
@@ -61,7 +69,8 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version 2
 TARGET_COMPILE_WITH_MSM_KERNEL := true
-
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_VERSION := 4.14
 BOARD_KERNEL_CMDLINE += \
     kpti=off \
     swiotlb=1 \
@@ -136,7 +145,7 @@ TARGET_SCREEN_DENSITY := 440
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Sepolicy
-include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
+#include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
