@@ -72,7 +72,7 @@ LOC_HIDL_VERSION := 4.0
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/configs/hidl/framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/configs/hidl/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
 DEVICE_MANIFEST_FILE += hardware/qcom-caf/sm8150/media/conf_files/sm6150/c2_manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
@@ -107,7 +107,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 
 TARGET_KERNEL_CONFIG := surya_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
-
+TARGET_KERNEL_VERSION := 4.14
 # LMKD
 TARGET_LMKD_STATS_LOG := true
 
